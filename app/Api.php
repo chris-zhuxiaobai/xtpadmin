@@ -168,6 +168,7 @@ class Api
 
     public function user_by_name($username, $cache=true) {
         $users = $this->request('GET', 'users/?userName='.$username);
+        var_dump($users);
         if (is_array($users) && is_array($users['items'])){
             foreach ($users['items'] as $item){
                 if ($item['userName'] == $username){
